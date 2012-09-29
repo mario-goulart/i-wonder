@@ -5,6 +5,10 @@
 
 (define (i-wonder base-path db-file #!key (awful-settings (lambda (_) (_))))
 
+  (unless (file-exists? db-file)
+    (print "Could not find the database file (" db-file "). Aborting.")
+    (exit 1))
+
   (add-request-handler-hook!
    'i-wonder
    (lambda (path handler)
