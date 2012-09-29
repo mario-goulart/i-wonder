@@ -1,0 +1,9 @@
+;;; i-wonder.meta -*- scheme -*-
+
+((egg "i-wonder.egg")
+ (synopsis "An awful application example")
+ (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (license "BSD")
+ (category web)
+ (depends (awful "0.36") awful-sql-de-lite)
+ (files "i-wonder.release-info" "i-wonder.scm" "i-wonder.meta" "i-wonder.setup"))

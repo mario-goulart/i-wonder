@@ -1,0 +1,17 @@
+I-wonder
+========
+
+An awful (http://wiki.call-cc.org/egg/awful) application example.
+
+
+How to see it in action
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Clone this repository then:
+
+  $ cd i-wonder
+  $ chicken-install
+  $ csi -s create-db.scm wonderings.db sql/captchas.sql
+  $ awful example-app.scm
+
+Then just point your browser to http://localhost:8080

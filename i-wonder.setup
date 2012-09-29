@@ -1,0 +1,8 @@
+;;; i-wonder.setup -*- scheme -*-
+
+(compile -s -O3 -d1 -j i-wonder i-wonder.scm)
+(compile -s -O3 -d1 i-wonder.import.scm)
+
+(install-extension 'i-wonder
+                   '("i-wonder.so" "i-wonder.import.so")
+                   '((version 0.1)))

@@ -1,0 +1,154 @@
+html, body
+{ font-family: verdana, arial, sans-serif;
+  color: #303030;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+
+#ajax-busy
+{ z-index: 100;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-image: url("/img/ajax-loader-big.gif");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+#i-wonder
+{ font-size: 300%;
+  font-style: italic;
+  font-weight: bold;
+  font-family: serif;
+  margin: 10px;
+}
+
+.random-wondering
+{ border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  padding: 25px;
+  margin: 10px;
+  display: inline;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  float: left;
+  position: relative;
+  max-width: 250px;
+  min-width: 150px;
+}
+
+
+#single-wondering
+{ border-style: solid;
+  border-width: 1px;
+  border-color: #ccc;
+  padding: 25px;
+  margin: auto;
+  margin-top: 20px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+  width: expression( document.body.clientWidth > 250 ? "250px" : "auto" );
+  max-width: 250px;
+  min-width: 150px;
+}
+
+.wbar
+{ display:block;
+  bottom: 4px;
+  right: 4px;
+  position: absolute;
+  font-size: 80%;
+  color: #ccc;
+}
+
+.wbar a:link {color: #ccc;}
+.wbar a:visited {color: #ccc;}
+.wbar a:hover {color: #999;}
+
+.link-button
+{ border-style: solid;
+  border-width: 1px;
+  border-color: #999;
+  text-decoration: none;
+  padding: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.link-button:link {color: #333;}
+.link-button:visited {color: #333;}
+.link-button:hover {color: #999;}
+
+
+#submit-container
+{ margin: 20px;
+}
+
+#wonderings
+{ margin-top: 40px;
+}
+
+#captcha-question, #captcha-answer
+{ font-size: 75%;
+  font-color: #999;
+  margin-right: 10px;
+}
+
+.tooltip
+{ position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+  background-color: #F6A828;
+  padding: 8px;
+  -moz-border-radius: 8px;
+  border-style: solid;
+  border-color: #999;
+  border-width: 1px;
+}
+
+
+#echo-window
+{ background-color: #F6A828;
+  padding: 7px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  top: 30%;
+  left: 30%;
+  position: absolute;
+  z-index: 4;
+}
+
+#echo-message
+{ background-color: #F6A828;
+  color: #333;
+  padding: 10px;
+  margin-top: 0px;
+  font-size: 85%;
+}
+
+#close-echo
+{ text-align: right;
+  padding: 3px;
+  color: white;
+  font-weight: normal;
+  cursor: pointer;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  margin-bottom: -20px;
+  margin-left: 400px;
+}
+
+#awful
+{ clear: both;
+  bottom: 20px;
+  left: 50%;
+  margin: 20px;
+}

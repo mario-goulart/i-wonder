@@ -1,0 +1,26 @@
+(use sql-de-lite posix)
+
+(define (usage #!optional exit-code)
+  (print "Usage: " (pathname-strip-directory (program-name))
+         " <db file> <captchas sql file>")
+  (print "\n<db file> will be created if it does not exist.")
+  (when exit-code (exit exit-code)))
+
+
+(let ((args (command-line-arguments)))
+  (when (or (null? args) (null? (cdr args)))
+    (usage 1))
+  (when (or (member "--help" args)
+            (member "-help" args)
+            (member "-h" args))
+    (usage 0))
+
+  (let* ((db-file (car args))
+         (captchas-sql (cadr args))
+         (db (open-database db-file))
+         (captchas (read-lines captchas-sql)))
+    (exec (sql db "create table wonderings(wondering text, abusive integer default 0)"))
+    (exec (sql db "create table captchas(hash text, question text, answer text)"))
+    (for-each (lambda (captcha)
+                (exec (sql db captcha)))
+              captchas)))
