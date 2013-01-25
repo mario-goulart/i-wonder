@@ -9,18 +9,15 @@
     (print "Could not find the database file (" db-file "). Aborting.")
     (exit 1))
 
-  (add-request-handler-hook!
-   'i-wonder
-   (lambda (path handler)
-     (when (string-prefix? base-path path)
-       (parameterize ((enable-sxml #t)
-                      (app-root-path base-path)
-                      (db-credentials db-file)
-                      (page-css "/css/i-wonder.css"))
-         (switch-to-sql-de-lite-database)
-         (awful-settings handler)))))
-
-  (parameterize ((enable-sxml #t))
+  (define-app i-wonder
+    matcher: base-path
+    handler-hook: (lambda (handler)
+                    (parameterize ((enable-sxml #t)
+                                   (app-root-path (string-intersperse base-path "/"))
+                                   (db-credentials db-file)
+                                   (page-css "/css/i-wonder.css"))
+                      (switch-to-sql-de-lite-database)
+                      (awful-settings handler)))
 
     (define (awful-badge)
       `(div (@ (id "awful"))
@@ -90,7 +87,7 @@
     ;;;
     ;;; Pages
     ;;;
-    (define-page base-path
+    (define-page (main-page-path)
       (lambda ()
 
         (add-javascript

@@ -1,2 +1,2 @@
 (use i-wonder)
-(i-wonder "/" "wonderings.db")
+(i-wonder '("/") "wonderings.db")
