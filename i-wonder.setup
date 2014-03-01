@@ -5,4 +5,4 @@
 
 (install-extension 'i-wonder
                    '("i-wonder.so" "i-wonder.import.so")
-                   '((version 0.1)))
+                   '((version "0.1")))
